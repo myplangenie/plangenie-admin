@@ -30,7 +30,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <form onSubmit={onSubmit} className="w-full max-w-sm card p-6">
-        <h1 className="text-xl font-semibold mb-4 text-primary">Admin Sign In</h1>
+        <h1 className="text-xl font-semibold mb-4 text-primary">Plan Genie Admin Sign In</h1>
         {error && <div className="mb-3 text-sm text-red-600">{error}</div>}
         <div className="space-y-4">
           <div>
