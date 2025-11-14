@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #1D4374; /* match app */
+  --accent: #EDAE40;  /* match app */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+.text-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.text-accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+.ring-accent { --tw-ring-color: var(--accent); }
+
+.card {
+  @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+}
+
+.stat {
+  /* Tailwind @apply cannot reference custom classes; repeat card base styles */
+  @apply bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex flex-col gap-1; 
+}
+
+.check-bg {
+  background: linear-gradient(135deg, #173B6D 0%, #1D4E89 50%, #5B86C6 100%) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
