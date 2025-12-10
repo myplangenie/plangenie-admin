@@ -92,6 +92,7 @@ export default function UsersPage() {
                 <TableHead>User</TableHead>
                 <TableHead>Organization</TableHead>
                 <TableHead>Plan</TableHead>
+                <TableHead>Onboarding</TableHead>
                 <TableHead>Last Active</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
@@ -116,6 +117,12 @@ export default function UsersPage() {
                     <TableCell className="text-black">{u.companyName || '-'}</TableCell>
                     <TableCell>
                       <span className="px-2 py-1 rounded text-xs border border-gray-200 bg-gray-50">{u.planType || 'Free'}</span>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-2">
+                        <span className={`px-2 py-0.5 rounded text-xs border ${u.onboardingCompleted ? 'border-green-200 text-green-700 bg-green-50' : 'border-gray-200 text-gray-500 bg-gray-50'}`}>Basic</span>
+                        <span className={`px-2 py-0.5 rounded text-xs border ${u.onboardingDetailCompleted ? 'border-green-200 text-green-700 bg-green-50' : 'border-gray-200 text-gray-500 bg-gray-50'}`}>Detail</span>
+                      </div>
                     </TableCell>
                     <TableCell>{u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString() : '—'}</TableCell>
                     <TableCell><UserStatusPill status={u.status} /></TableCell>

@@ -129,6 +129,18 @@ export default function UserDetailPage() {
                   <label className="block text-xs text-gray-500 mb-1">Last Active</label>
                   <Input disabled value={item.lastActiveAt ? new Date(item.lastActiveAt).toLocaleString() : ''} />
                 </div>
+                <div>
+                  <label className="block text-xs text-gray-500 mb-1">Onboarding Completed</label>
+                  <div className="h-9 flex items-center">
+                    <span className={`inline-flex items-center px-2 py-1 rounded text-xs border ${item.onboardingCompleted ? 'border-green-200 text-green-700 bg-green-50' : 'border-gray-200 text-gray-500 bg-gray-50'}`}>{item.onboardingCompleted ? 'Yes' : 'No'}</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-xs text-gray-500 mb-1">Detail Onboarding Completed</label>
+                  <div className="h-9 flex items-center">
+                    <span className={`inline-flex items-center px-2 py-1 rounded text-xs border ${item.onboardingDetailCompleted ? 'border-green-200 text-green-700 bg-green-50' : 'border-gray-200 text-gray-500 bg-gray-50'}`}>{item.onboardingDetailCompleted ? 'Yes' : 'No'}</span>
+                  </div>
+                </div>
                 <div className="md:col-span-2">
                   <label className="block text-xs text-gray-500 mb-1">Status</label>
                   <div className="h-9 flex items-center">

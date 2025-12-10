@@ -11,6 +11,9 @@ export type UserRow = {
   companyName?: string;
   lastActiveAt?: string;
   status?: 'active' | 'suspended';
+  onboardingDone?: boolean; // legacy support
+  onboardingCompleted?: boolean;
+  onboardingDetailCompleted?: boolean;
   planType?: 'Free' | 'Trial' | 'Pro' | 'Enterprise';
 };
 
